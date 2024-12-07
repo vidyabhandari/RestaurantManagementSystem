@@ -35,7 +35,7 @@ const Signup = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ formData }),
+          body: JSON.stringify(formData),
         }
       );
 
@@ -91,10 +91,10 @@ const Signup = () => {
             />
           </div>
           <div className="input">
-            <label htmlFor="confirmpassword">Confirm Password:</label>
+            <label htmlFor="confirmPassword">Confirm Password:</label>
             <input
               type="password"
-              id="confirmpassword"
+              id="confirmPassword"
               placeholder="Confirm Password"
               value={formData.confirmPassword}
               onChange={handleChange}
