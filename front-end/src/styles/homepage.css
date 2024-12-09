@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ff6f61;
+    background-color: #F08080;
     padding: 1rem 2rem;
     color: white;
     flex-grow:1 ;
@@ -46,7 +46,7 @@
 }
 
 .login-btn {
-    background-color: #ff6f61;
+    background-color: #F08080;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -106,6 +106,6 @@
 .footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
+    background-color: #ADD8E6;
     color: white;
 }

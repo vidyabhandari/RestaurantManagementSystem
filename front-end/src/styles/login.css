@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid black;
+    /* border: 5px solid black; */
     height: 70vh;
     width: 20vw;
 }
