@@ -60,13 +60,47 @@ export default function Homepage() {
       </section>
 
       <section id="about" className="about-us">
-        <h2>About Us</h2>
-        <p>
-          Welcome to Restaurant Name, where we serve the finest cuisine made
-          with love and passion. Our focus is on delivering an exceptional
-          dining experience in a cozy and friendly atmosphere. Come visit us and
-          let us make your meal special!
-        </p>
+        <div className="about-us">
+          <h1>About Us</h1>
+          <section className="introduction">
+            <h2>Welcome to Flavors Unleashed</h2>
+            <p>
+              At Flavors Unleashed, we specialize in authentic Italian cuisine
+              with a modern twist, using the freshest ingredients to bring you
+              an unforgettable dining experience.
+            </p>
+          </section>
+          <section className="our-story">
+            <h2>Our Story</h2>
+            <p>
+              Founded in 2015, Flavors Unleashed began with a dream to share the
+              timeless flavors of Italy with our community. What started as a
+              small family-owned eatery has grown into a beloved dining
+              destination.
+            </p>
+          </section>
+          <section className="values">
+            <h2>Our Vision & Values</h2>
+            <p>
+              Our vision is to create a space where food brings people together
+              to create lasting memories. We prioritize quality, authenticity,
+              and sustainability in every dish.
+            </p>
+          </section>
+          <section className="team">
+            <h2>Meet Our Team</h2>
+            <p>
+              Chef Maria leads our kitchen, bringing over 20 years of culinary
+              expertise and a passion for Mediterranean flavors to every dish.
+            </p>
+          </section>
+          <section className="cta">
+            <h2>Experience the Difference</h2>
+            <p>
+              Visit us today or explore our menu online to start your journey!
+            </p>
+          </section>
+        </div>
       </section>
 
       <footer className="footer">
