@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import profile from "../Images/profile.jpeg";
 import homepage from "../Images/homepage.jpg";
 import "../styles/homepage.css";
@@ -12,19 +12,29 @@ export default function Homepage() {
           <div className="logo">"Home feels!🏠♡"</div>
           <ul className="nav-links">
             <li>
-              <Link to="/">Home</Link>
+              <HashLink smooth to="/#home">
+                Home
+              </HashLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <HashLink smooth to="/#about">
+                About
+              </HashLink>
             </li>
             <li>
-              <Link to="/menu">Menu</Link>
+              <HashLink smooth to="/menu">
+                Menu
+              </HashLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <HashLink smooth to="/contact">
+                Contact
+              </HashLink>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <HashLink smooth to="/login">
+                Login
+              </HashLink>
             </li>
           </ul>
 
