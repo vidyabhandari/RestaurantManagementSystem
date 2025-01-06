@@ -3,6 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import profile from "../Images/profile.jpeg";
 import homepage from "../Images/homepage.jpg";
 import "../styles/homepage.css";
+import "../styles/menu.css";
 
 export default function Homepage() {
   return (
@@ -22,7 +23,7 @@ export default function Homepage() {
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="/menu">
+              <HashLink smooth to="/menu/menu">
                 Menu
               </HashLink>
             </li>
