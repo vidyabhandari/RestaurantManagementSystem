@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,8 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -21,12 +23,19 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage(""); // Clear previous error messages
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Password do not match!");
+      setErrorMessage("Passwords do not match!");
       return;
     }
 
+    if (formData.password.length < 6) {
+      setErrorMessage("Password must be at least 6 characters long.");
+      return;
+    }
+
+    setIsLoading(true);
     try {
       const response = await fetch(
         "http://localhost:4000/api/v1/loginsignup/signup",
@@ -41,21 +50,23 @@ const Signup = () => {
 
       const data = await response.json();
       if (response.ok) {
-        alert("Signup successful!", data);
+        alert("Signup successful!");
         navigate("/login");
       } else {
-        alert(data.error || "An error occurred. Please try again. ");
+        setErrorMessage(data.error || "An error occurred. Please try again.");
       }
     } catch (error) {
       console.error("Error during signup:", error);
-      alert("An error occurred. Please try again later.");
+      setErrorMessage("An error occurred. Please try again later.");
     }
+    setIsLoading(false);
   };
 
   return (
     <div className="signup-container">
       <div className="signup-box">
         <h2>Sign Up</h2>
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
           <div className="input">
             <label htmlFor="name">Name:</label>
@@ -101,10 +112,12 @@ const Signup = () => {
               required
             />
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Signing Up..." : "Sign Up"}
+          </button>
         </form>
         <div className="login-link">
-          Already have an account? <a href="/login">Login</a>
+          Already have an account? <Link to="/login">Login</Link>
         </div>
       </div>
     </div>

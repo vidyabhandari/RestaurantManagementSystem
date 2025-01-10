@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Replaced <a> with <Link> for SPA navigation
 import "../styles/login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Loading state for button
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setErrorMessage(""); // Clear previous error messages
+    setIsLoading(true);
 
     try {
       const response = await fetch(
@@ -27,18 +32,22 @@ const Login = () => {
         alert("Login successful!");
         navigate("/dashboard"); // Redirect to dashboard or home page
       } else {
-        alert(data.message || "Invalid credentials. Please try again.");
+        setErrorMessage(
+          data.message || "Invalid credentials. Please try again."
+        );
       }
     } catch (error) {
       console.error("Error during login:", error);
-      alert("An error occurred. Please try again later.");
+      setErrorMessage("An error occurred. Please try again later.");
     }
+    setIsLoading(false);
   };
 
   return (
     <div className="login-container">
       <div className="login-box">
         <h2>Login</h2>
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
           <div className="input">
             <label htmlFor="email">Email:</label>
@@ -63,17 +72,19 @@ const Login = () => {
             />
           </div>
           <div>
-            <button className="login-button">Login</button>
+            <button type="submit" className="login-button" disabled={isLoading}>
+              {isLoading ? "Logging in..." : "Login"}
+            </button>
           </div>
           <div className="extra-links">
-            <a href="/forgot-password">
+            <Link to="/forgot-password">
               Forgot <span>Password?</span>
-            </a>
+            </Link>
             <p>
               Don't have an account?{" "}
-              <a href="/signup">
+              <Link to="/signup">
                 <span>Sign up</span>
-              </a>
+              </Link>
             </p>
           </div>
         </form>
@@ -81,4 +92,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;
