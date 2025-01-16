@@ -33,3 +33,5 @@ yarn.lock
 .cache
 .parcel-cache
 
+.env
+/node_modules
