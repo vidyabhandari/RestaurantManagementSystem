@@ -1,13 +1,4 @@
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Full viewport height */
-    /* background-color: #004d27; */
-  }
-
-.login-container{
+.signup-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +8,7 @@ body {
     border-radius: 8px;
 }
 
-.login-box{
+.signup-box{
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -28,7 +19,7 @@ body {
     border-radius: 8px;
 }
 
-.login-box h2{
+.signup-box h2{
     margin-bottom: 1rem;
     font-size: 1.5em;
     font-weight: bold;
@@ -55,7 +46,7 @@ body {
     outline: none;
 }
 
-.login-button{
+button{
     width: 100%;
     border: none;
     cursor: pointer;
@@ -65,25 +56,21 @@ body {
     border-radius: 4px;
 }
 
-.login-button:hover{
+button:hover{
     background: linear-gradient(to right, #004d27, #8bc349);
 }
 
-.extra-links {
+.login-link{
     margin-top: 1rem;
     font-size: 0.9rem;
     color: #004d27;
-  }
-  
-  .extra-links a {
+}
+
+.login-link a{
     color: #8bc349;
     text-decoration: none;
-  }
-  
-  .extra-links span {
-    font-weight: bold;
-  }
-  
-  .extra-links a:hover {
+}
+
+.login-link a:hover{
     text-decoration: underline;
-  }
+}

@@ -1,9 +1,31 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Ensure consistent font */
+}
+
+/* Header Styling */
+header {
+    background-color: #004d27 !important; 
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
 /* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F08080;
+    background-color: #76a642;
     padding: 1rem 2rem;
     color: white;
     flex-grow:1 ;
@@ -46,7 +68,7 @@
 }
 
 .login-btn {
-    background-color: #F08080;
+    background-color: #76a642;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -56,14 +78,15 @@
 }
 
 .login-btn:hover {
-    background-color: #e65a4d;
+    background-color: #004d27;
 }
 
 /* Hero Section */
 .hero {
-    background: url('homepage.jpg') no-repeat center center/cover;
-    height: 100vh;
+    background: url('feels.png') no-repeat center center/cover;
+    height: 100%;
     display: flex;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -73,10 +96,12 @@
 .hero-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: black;
 }
 
 .hero-text p {
     font-size: 1.2rem;
+    color: black;
 }
 
 @media (max-width: 768px) {
@@ -106,6 +131,6 @@
 .footer {
     text-align: center;
     padding: 1rem;
-    background-color: #ADD8E6;
+    background-color: #76a642;
     color: white;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import profile from "../Images/profile.jpeg";
-import homepage from "../Images/homepage.jpg";
+import feels from "../Images/feels.png";
 import "../styles/homepage.css";
 import "../styles/menu.css";
 
@@ -53,7 +53,7 @@ export default function Homepage() {
       </header>
 
       <section id="home" className="hero">
-        <img src={homepage} alt="Delicious food with cozy ambiance" />
+        <img src={feels} alt="Delicious food with cozy ambiance" />
         <div className="hero-text">
           <h1>Welcome to Home Feels!</h1>
           <p>"Where flavors tell stories and every meal feels like home."</p>
