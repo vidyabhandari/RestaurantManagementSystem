@@ -1,6 +1,6 @@
-import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import express from "express";
 import { dbConnection } from "./database/dbConnection.js";
 import { errorMiddleWare } from "./error/error.js";
 import loginsignup from "./routes/loginsignup.js";

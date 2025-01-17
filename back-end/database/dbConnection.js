@@ -1,16 +1,12 @@
-import mongoose from "mongoose";
-
-mongoose.set("strictQuery", true);
+import mongoose from 'mongoose';
 
 export const dbConnection = () => {
-  mongoose
-    .connect(process.env.MONGO_URI, {
-      dbName: "MyRestaurant",
-    })
-    .then(() => {
-      console.log("Connected to database succesfully!");
-    })
-    .catch((err) => {
-      console.log("Some error while connecting to database!");
-    });
+  const dbURI = process.env.MONGO_URI || 'mongodb://localhost:27017/restaurant'; // fallback to localhost if not found
+  
+  mongoose.connect(dbURI, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+  })
+  .then(() => console.log('Connected to database successfully!'))
+  .catch(err => console.log('Error connecting to database:', err));
 };
